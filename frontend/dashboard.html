@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Women Security System</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-section">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic circle-pic">
+                <h3 id="sidebar-username">User Name</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#profile" onclick="showSection('profile-section')">Profile</a></li>
+                <li><a href="#notifications" onclick="showSection('notifications-section')">Notifications</a></li>
+                <li><a href="#contacts" onclick="showSection('contacts-section')">Emergency Contacts</a></li>
+                <li><a href="#settings" onclick="showSection('settings-section')">Settings</a></li>
+                <li><a href="#logout" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="card-container">
+                <div class="card" data-section="profile-section">
+                    <h3>Profile</h3>
+                    <p>Manage your profile details</p>
+                </div>
+                <div class="card" data-section="notifications-section">
+                    <h3>Notifications</h3>
+                    <p>Check latest alerts</p>
+                </div>
+                <div class="card" data-section="contacts-section">
+                    <h3>Emergency Contacts</h3>
+                    <p>Manage emergency numbers</p>
+                </div>
+                <div class="card" data-section="settings-section">
+                    <h3>Settings</h3>
+                    <p>Customize your preferences</p>
+                </div>
+            </div>
+            
+            <div id="profile-section" class="section" style="display:none;">
+                <h2>Profile</h2>
+                <p><strong>Email:</strong> <span id="user-email">user@example.com</span></p>
+                <p><strong>Name:</strong> <span id="user-fullname">User Name</span></p>
+            </div>
+            
+            <div id="notifications-section" class="section" style="display:none;">
+                <h2>Notifications</h2>
+                <p>No new notifications</p>
+            </div>
+            
+            <div id="contacts-section" class="section" style="display:none;">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li>Police: 100</li>
+                    <li>Women Helpline: 1091</li>
+                    <li>Trusted Contact: <span id="trusted-contact">Not Set</span></li>
+                </ul>
+            </div>
+            
+            <div id="settings-section" class="section" style="display:none;">
+                <h2>Settings</h2>
+                <p>Manage your preferences here.</p>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

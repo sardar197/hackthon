@@ -1,0 +1,173 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF4081;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+/* Updated Button Styles */
+.btn {
+    background: #FF4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #D81B60;
+}
+
+/* Add margin to the Sign Up button */
+.nav-buttons .btn:first-child {
+    margin-right: 15px;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 100px;
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #FF4081, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+.learn-more {
+    background: #FFD700;
+    color: #333;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    background: #FFA500;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin: 15px 0 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* About Section */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 28px;
+    color: #FFD700;
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+.about img {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
