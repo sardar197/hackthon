@@ -11,7 +11,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="profile-section">
-                <img src="profile.jpg" alt="Profile Picture" class="profile-pic circle-pic">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic circle-pic" id="profile-pic">
                 <h3 id="sidebar-username">User Name</h3>
             </div>
             <ul class="nav-links">
@@ -19,6 +19,7 @@
                 <li><a href="#notifications" onclick="showSection('notifications-section')">Notifications</a></li>
                 <li><a href="#contacts" onclick="showSection('contacts-section')">Emergency Contacts</a></li>
                 <li><a href="#settings" onclick="showSection('settings-section')">Settings</a></li>
+                <li><a href="#bluetooth" onclick="showSection('bluetooth-section')">Bluetooth</a></li>
                 <li><a href="#logout" onclick="logout()">Logout</a></li>
             </ul>
         </div>
@@ -42,31 +43,65 @@
                     <h3>Settings</h3>
                     <p>Customize your preferences</p>
                 </div>
+                <div class="card" data-section="bluetooth-section">
+                    <h3>Bluetooth</h3>
+                    <p>Connect with your security devices</p>
+                </div>
             </div>
             
+            <!-- Profile Section -->
             <div id="profile-section" class="section" style="display:none;">
                 <h2>Profile</h2>
                 <p><strong>Email:</strong> <span id="user-email">user@example.com</span></p>
                 <p><strong>Name:</strong> <span id="user-fullname">User Name</span></p>
             </div>
             
+            <!-- Notifications Section -->
             <div id="notifications-section" class="section" style="display:none;">
                 <h2>Notifications</h2>
                 <p>No new notifications</p>
             </div>
             
+            <!-- Emergency Contacts Section -->
             <div id="contacts-section" class="section" style="display:none;">
                 <h2>Emergency Contacts</h2>
-                <ul>
+                <ul id="contacts-list">
                     <li>Police: 100</li>
                     <li>Women Helpline: 1091</li>
-                    <li>Trusted Contact: <span id="trusted-contact">Not Set</span></li>
                 </ul>
+
+                <h3>Add Emergency Contact</h3>
+                <input type="text" id="contact-name" placeholder="Contact Name">
+                <input type="text" id="contact-phone" placeholder="Phone Number">
+                <button id="add-contact-btn">Add Contact</button>
             </div>
             
+            <!-- Settings Section -->
             <div id="settings-section" class="section" style="display:none;">
                 <h2>Settings</h2>
-                <p>Manage your preferences here.</p>
+                
+                <!-- Change Name -->
+                <label for="new-name">Change Name:</label>
+                <input type="text" id="new-name" placeholder="Enter new name">
+                <button onclick="updateName()">Update Name</button>
+                
+                <!-- Change Email -->
+                <label for="new-email">Change Email:</label>
+                <input type="email" id="new-email" placeholder="Enter new email">
+                <button onclick="updateEmail()">Update Email</button>
+
+                <!-- Change Profile Picture -->
+                <label for="profile-pic-input">Update Profile Picture:</label>
+                <input type="file" id="profile-pic-input" accept="image/*">
+                <button onclick="updateProfilePic()">Upload Photo</button>
+            </div>
+
+            <!-- Bluetooth Section -->
+            <div id="bluetooth-section" class="section" style="display:none;">
+                <h2>Bluetooth</h2>
+                <p>Scan and connect to your security device.</p>
+                <button onclick="connectBluetooth()">Connect Bluetooth</button>
+                <p id="bluetooth-status">Status: Not Connected</p>
             </div>
         </div>
     </div>
