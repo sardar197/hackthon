@@ -4,7 +4,9 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
 
-const app = express();
+const app = express()
+const port = process.env.PORT || 5000;
+
 
 // ✅ Middleware
 app.use(express.json()); // Parse JSON requests
